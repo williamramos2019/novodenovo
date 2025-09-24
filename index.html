@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Serviços profissionais de limpeza de estofados (cortinas, carpetes, sofás) e estética automotiva. Qualidade e excelência em cada detalhe.">
+    <meta name="keywords" content="limpeza de estofados, cortinas, carpetes, sofás, estética automotiva, detalhamento, limpeza residencial, limpeza automotiva">
+    <title>Limpeza de Estofados e Estética Automotiva - AutoLimpeza Pro</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #3f51b5;
+            --accent-color: #ff9800;
+            --dark-color: #212121;
+            --light-color: #f5f5f5;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --shadow: 0 10px 30px rgba(26, 35, 126, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        .navbar {
+            background: var(--gradient) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 15px 35px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn-custom:hover {
+            background: #e68900;
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 152, 0, 0.3);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Cards */
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            color: var(--white);
+        }
+
+        .service-card * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        .service-card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .service-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card:hover .service-price {
+            color: var(--accent-color);
+        }
+
+        /* Gallery */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            height: 250px;
+            background: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 0.8;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--white);
+            text-align: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-placeholder {
+            font-size: 4rem;
+            color: #ddd;
+            opacity: 0.5;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-color);
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            height: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .contact-icon i {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-control {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(63, 81, 181, 0.25);
+        }
+
+        /* Dynamic form sections */
+        #vehicleInfo, #residentialInfo {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(245, 245, 245, 0.5);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .form-label {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 35, 126, 0.15);
+        }
+
+        .testimonial-content {
+            flex: 1;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .author-info h6 {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .author-info small {
+            color: #888;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+        }
+
+        .modal-title {
+            font-weight: 600;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer h5 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-btn i {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                margin-bottom: 30px;
+            }
+            
+            .contact-form,
+            .contact-info {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 0 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .whatsapp-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .whatsapp-btn i {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-car me-2"></i>AutoLimpeza Pro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Depoimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Limpeza de Estofados e Estética Automotiva</h1>
+                        <p>Trabalhamos com todo tipo de estofado: cortinas, carpetes, sofás, poltronas e estética automotiva. Transformamos seus ambientes e veículos com qualidade e excelência em cada detalhe.</p>
+                        <a href="#services" class="btn btn-custom me-3">
+                            <i class="fas fa-star me-2"></i>Nossos Serviços
+                        </a>
+                        <a href="#" class="btn btn-custom" onclick="openWhatsApp()">
+                            <i class="fab fa-whatsapp me-2"></i>Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="fas fa-car" style="font-size: 15rem; color: rgba(255,255,255,0.1);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos uma gama completa de serviços para estofados residenciais e estética automotiva</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('estofados')">
+                        <div class="service-icon">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <h4>Limpeza de Estofados Automotivos</h4>
+                        <p>Limpeza profunda de bancos, carpetes e forros automotivos com produtos especializados</p>
+                        <div class="service-price">A partir de R$ 80</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('estetica')">
+                        <div class="service-icon">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <h4>Estética Automotiva</h4>
+                        <p>Enceramento, polimento e proteção da pintura para um brilho duradouro</p>
+                        <div class="service-price">A partir de R$ 120</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('completo')">
+                        <div class="service-icon">
+                            <i class="fas fa-car-wash"></i>
+                        </div>
+                        <h4>Lavagem Completa</h4>
+                        <p>Serviço completo incluindo externa, interna e detalhamento</p>
+                        <div class="service-price">A partir de R$ 180</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('cera')">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Enceramento Premium</h4>
+                        <p>Proteção avançada com ceras importadas e nanotecnologia</p>
+                        <div class="service-price">A partir de R$ 150</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('motor')">
+                        <div class="service-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h4>Limpeza de Motor</h4>
+                        <p>Desengraxante especializado para motor e compartimento</p>
+                        <div class="service-price">A partir de R$ 60</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('vidros')">
+                        <div class="service-icon">
+                            <i class="fas fa-window-maximize"></i>
+                        </div>
+                        <h4>Tratamento de Vidros</h4>
+                        <p>Limpeza e aplicação de repelente de água nos vidros</p>
+                        <div class="service-price">A partir de R$ 40</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Novos Serviços de Estofados Residenciais -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('sofas')">
+                        <div class="service-icon">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <h4>Limpeza de Sofás</h4>
+                        <p>Limpeza profunda de sofás e poltronas com produtos especializados</p>
+                        <div class="service-price">A partir de R$ 100</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('cortinas')">
+                        <div class="service-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h4>Limpeza de Cortinas</h4>
+                        <p>Limpeza e higienização de cortinas, persianas e tecidos decorativos</p>
+                        <div class="service-price">A partir de R$ 60</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card" onclick="openServiceModal('carpetes')">
+                        <div class="service-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <h4>Limpeza de Carpetes</h4>
+                        <p>Lavagem e higienização de carpetes e tapetes residenciais</p>
+                        <div class="service-price">A partir de R$ 80</div>
+                        <button class="btn btn-custom">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section" style="background: var(--light-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Trabalhos</h2>
+                <p>Veja alguns dos nossos trabalhos realizados com excelência e dedicação</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="assets/Automotive_aesthetic_detailing_service_d1cdb713.png" alt="Estética Automotiva Completa" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <h5>Estética Completa</h5>
+                            <p>Transformação total com polimento e enceramento</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="assets/Residential_sofa_cleaning_service_947e9cc3.png" alt="Limpeza de Sofás Residenciais" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <h5>Limpeza de Sofás</h5>
+                            <p>Renovação profunda com produtos especializados</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="assets/Professional_curtain_cleaning_service_b02dc7bd.png" alt="Limpeza Profissional de Cortinas" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <h5>Limpeza de Cortinas</h5>
+                            <p>Tratamento especializado para tecidos delicados</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="assets/Professional_carpet_cleaning_demonstration_77462bde.png" alt="Limpeza Profissional de Carpetes" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <h5>Limpeza de Carpetes</h5>
+                            <p>Extração profunda com equipamentos industriais</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="assets/Car_interior_cleaning_demonstration_edf68863.png" alt="Limpeza de Estofados Automotivos" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <h5>Estofados Automotivos</h5>
+                            <p>Renovação completa do interior do veículo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="assets/Professional_motorcycle_cleaning_service_e86aab62.png" alt="Limpeza de Motocicleta" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <h5>Limpeza de Motos</h5>
+                            <p>Cuidado especializado para motocicletas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h5>Limpeza de Motor</h5>
+                            <p>Motor impecável e protegido</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="assets/Automotive_glass_treatment_service_82519496.png" alt="Tratamento de Vidros Automotivos" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <h5>Tratamento de Vidros</h5>
+                            <p>Aplicação de repelente e cristalização</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <p>Veja a experiência de quem já confia na AutoLimpeza Pro</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Excelente serviço! Meu sofá ficou como novo após a limpeza. Profissionais muito competentes e pontuais. Super recomendo!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h6>Maria Silva</h6>
+                                <small>Morumbi, São Paulo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"A estética do meu carro ficou perfeita! O enceramento durou mais de 6 meses. Preço justo e qualidade excepcional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h6>Carlos Oliveira</h6>
+                                <small>Vila Olímpia, São Paulo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Limparam minhas cortinas e carpetes com muito cuidado. Produtos de qualidade e sem cheiro forte. Voltarão sempre!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h6>Ana Costa</h6>
+                                <small>Jardins, São Paulo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Interior do meu SUV estava muito sujo. Fizeram um trabalho impecável! Bancos ficaram como novos. Super indico!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h6>Roberto Santos</h6>
+                                <small>Pinheiros, São Paulo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Empresa séria e confiável. Já usei os serviços 3 vezes e sempre com excelência. Preços honestos e resultados garantidos."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h6>Fernanda Lima</h6>
+                                <small>Brooklin, São Paulo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Atendimento nota 10! Chegaram no horário, explicaram todo o processo e o resultado superou minhas expectativas."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h6>Eduardo Mendes</h6>
+                                <small>Itaim Bibi, São Paulo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Solicite um orçamento ou tire suas dúvidas. Estamos prontos para atendê-lo!</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Informações de Contato</h4>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h6>WhatsApp</h6>
+                                <p>(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h6>Telefone</h6>
+                                <p>(11) 3333-3333</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h6>E-mail</h6>
+                                <p>contato@autolimpezapro.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h6>Endereço</h6>
+                                <p>Rua das Flores, 123<br>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h6>Horário de Funcionamento</h6>
+                                <p>Segunda a Sábado: 8h às 18h<br>Domingo: 9h às 14h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h4 class="mb-4">Solicite um Orçamento Gratuito</h4>
+                        <form id="quoteForm">
+                            <!-- Informações Pessoais -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" id="clientName" class="form-control" placeholder="Seu Nome Completo" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" id="clientPhone" class="form-control" placeholder="Telefone/WhatsApp" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="email" id="clientEmail" class="form-control" placeholder="E-mail">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="clientAddress" class="form-control" placeholder="Cidade/Bairro">
+                                </div>
+                            </div>
+                            
+                            <!-- Tipo de Serviço -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="form-label text-start w-100"><strong>Tipo de Serviço:</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select id="serviceCategory" class="form-control" required onchange="updateServiceOptions()">
+                                        <option value="">Selecione a Categoria</option>
+                                        <option value="automotivo">Serviços Automotivos</option>
+                                        <option value="residencial">Estofados Residenciais</option>
+                                        <option value="ambos">Ambos os Serviços</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="specificService" class="form-control" required>
+                                        <option value="">Primeiro selecione a categoria</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Informações do Veículo (aparece apenas para serviços automotivos) -->
+                            <div id="vehicleInfo" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="text" id="vehicleBrand" class="form-control" placeholder="Marca do Veículo">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" id="vehicleModel" class="form-control" placeholder="Modelo">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" id="vehicleYear" class="form-control" placeholder="Ano">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <select id="vehicleType" class="form-control">
+                                            <option value="">Tipo de Veículo</option>
+                                            <option value="hatch">Hatch</option>
+                                            <option value="sedan">Sedan</option>
+                                            <option value="suv">SUV</option>
+                                            <option value="pickup">Pickup</option>
+                                            <option value="van">Van/Utilitário</option>
+                                            <option value="moto">Motocicleta</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select id="vehicleCondition" class="form-control">
+                                            <option value="">Estado Geral</option>
+                                            <option value="limpo">Limpo (manutenção)</option>
+                                            <option value="sujo">Sujo</option>
+                                            <option value="muito-sujo">Muito Sujo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Informações de Estofados Residenciais -->
+                            <div id="residentialInfo" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="number" id="itemQuantity" class="form-control" placeholder="Quantidade de peças" min="1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select id="itemSize" class="form-control">
+                                            <option value="">Tamanho/Tipo</option>
+                                            <option value="pequeno">Pequeno (1 lugar)</option>
+                                            <option value="medio">Médio (2-3 lugares)</option>
+                                            <option value="grande">Grande (4+ lugares)</option>
+                                            <option value="cortina-pequena">Cortina Pequena</option>
+                                            <option value="cortina-grande">Cortina Grande</option>
+                                            <option value="carpete-pequeno">Carpete até 10m²</option>
+                                            <option value="carpete-medio">Carpete 10-20m²</option>
+                                            <option value="carpete-grande">Carpete 20m²+</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <select id="itemCondition" class="form-control">
+                                            <option value="">Estado dos Estofados</option>
+                                            <option value="bom">Bom (limpeza preventiva)</option>
+                                            <option value="manchas">Com manchas</option>
+                                            <option value="muito-sujo">Muito sujo</option>
+                                            <option value="pets">Pelos de animais</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select id="urgency" class="form-control">
+                                            <option value="">Prazo Desejado</option>
+                                            <option value="hoje">Hoje</option>
+                                            <option value="amanha">Amanhã</option>
+                                            <option value="semana">Esta semana</option>
+                                            <option value="flexivel">Flexível</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Observações -->
+                            <textarea id="serviceNotes" class="form-control" rows="4" placeholder="Descreva detalhes adicionais, manchas específicas, preferências de horário, ou outras observações importantes"></textarea>
+                            
+                            <!-- Botão de Envio -->
+                            <button type="submit" class="btn btn-custom w-100">
+                                <i class="fab fa-whatsapp me-2"></i>Solicitar Orçamento via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-car me-2"></i>AutoLimpeza Pro</h5>
+                    <p>Especialistas em limpeza de estofados e estética automotiva. Qualidade e excelência em cada serviço.</p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5>Contato Rápido</h5>
+                    <p><i class="fab fa-whatsapp me-2"></i>(11) 99999-9999</p>
+                    <p><i class="fas fa-phone me-2"></i>(11) 3333-3333</p>
+                    <p><i class="fas fa-envelope me-2"></i>contato@autolimpezapro.com.br</p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5>Siga-nos</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr style="border-color: #444; margin: 30px 0 20px;">
+            <div class="text-center">
+                <p>&copy; 2025 AutoLimpeza Pro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="#" class="whatsapp-btn" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Service Modal -->
+    <div class="modal fade" id="serviceModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="serviceModalBody">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-custom" onclick="openWhatsApp()">
+                        <i class="fab fa-whatsapp me-2"></i>Solicitar Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Service details data
+        const serviceDetails = {
+            estofados: {
+                title: 'Limpeza de Estofados',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Aspiração completa</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza dos bancos</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza dos carpetes</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza do forro</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza das portas</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Aromatização</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 2-3 horas</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Hatch/Sedan: R$ 80</li>
+                                <li>SUV/Pickup: R$ 100</li>
+                                <li>Van/Utilitário: R$ 120</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Utilizamos produtos biodegradáveis e técnicas profissionais para garantir a melhor limpeza sem danificar os materiais.
+                    </div>
+                `
+            },
+            estetica: {
+                title: 'Estética Automotiva',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Lavagem externa completa</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Desengraxe de rodas</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Aplicação de cera</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Polimento da pintura</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Tratamento de plásticos</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza dos vidros</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 3-4 horas</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Hatch/Sedan: R$ 120</li>
+                                <li>SUV/Pickup: R$ 150</li>
+                                <li>Van/Utilitário: R$ 180</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Utilizamos produtos premium e técnicas avançadas para restaurar e proteger a pintura do seu veículo.
+                    </div>
+                `
+            },
+            completo: {
+                title: 'Lavagem Completa',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Todos os serviços de estofados</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Todos os serviços de estética</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza do motor</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza do porta-malas</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Tratamento de borrachas</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Aromatização especial</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 5-6 horas</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Hatch/Sedan: R$ 180</li>
+                                <li>SUV/Pickup: R$ 220</li>
+                                <li>Van/Utilitário: R$ 260</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-success mt-3">
+                        <i class="fas fa-star me-2"></i>
+                        <strong>Melhor custo-benefício!</strong> Economia de até 30% em relação aos serviços individuais.
+                    </div>
+                `
+            },
+            cera: {
+                title: 'Enceramento Premium',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Lavagem pré-enceramento</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Descontaminação da pintura</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Aplicação de cera importada</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Polimento de acabamento</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Proteção UV</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Brilho de longa duração</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 4-5 horas</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Hatch/Sedan: R$ 150</li>
+                                <li>SUV/Pickup: R$ 180</li>
+                                <li>Van/Utilitário: R$ 210</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Proteção premium com duração de 3-4 meses. Ideal para quem busca o máximo em proteção e brilho.
+                    </div>
+                `
+            },
+            motor: {
+                title: 'Limpeza de Motor',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Desengraxe completo</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza do compartimento</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Proteção de componentes</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Aplicação de silicone</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza da bateria</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Secagem cuidadosa</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 1-2 horas</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Motor padrão: R$ 60</li>
+                                <li>Motor grande: R$ 80</li>
+                                <li>Motor muito sujo: R$ 100</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning mt-3">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        Serviço realizado com motor frio e proteção de componentes eletrônicos. Total segurança para seu veículo.
+                    </div>
+                `
+            },
+            vidros: {
+                title: 'Tratamento de Vidros',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza profunda</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Remoção de resíduos</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Aplicação de repelente</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Tratamento antiembaçante</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza dos espelhos</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Acabamento perfeito</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 30-45 minutos</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Todos os vidros: R$ 40</li>
+                                <li>Com película: R$ 50</li>
+                                <li>Vidros blindados: R$ 60</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-eye me-2"></i>
+                        Visibilidade cristalina e proteção contra chuva. O repelente facilita a remoção de água e sujeira.
+                    </div>
+                `
+            },
+            sofas: {
+                title: 'Limpeza de Sofás e Poltronas',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Aspiração profunda</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Pré-tratamento de manchas</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza com produtos específicos</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Extração de sujeira e ácaros</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Secagem rápida</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Aplicação de protetor</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 2-3 horas</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Sofá 2 lugares: R$ 100</li>
+                                <li>Sofá 3 lugares: R$ 130</li>
+                                <li>Sofá grande/canto: R$ 180</li>
+                                <li>Poltrona: R$ 60</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-success mt-3">
+                        <i class="fas fa-leaf me-2"></i>
+                        Produtos biodegradáveis e hipoalergênicos. Seguros para crianças e pets.
+                    </div>
+                `
+            },
+            cortinas: {
+                title: 'Limpeza de Cortinas',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Remoção cuidadosa</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Limpeza profissional</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Tratamento anti-ácaros</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Secagem adequada</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Passadoria especializada</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Reinstalação no local</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>1-2 dias (secagem incluída)</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Por metro: R$ 15</li>
+                                <li>Cortina padrão: R$ 60</li>
+                                <li>Cortina grande: R$ 90</li>
+                                <li>Persiana: R$ 40</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-home me-2"></i>
+                        Serviço completo com retirada e entrega. Suas cortinas ficam como novas!
+                    </div>
+                `
+            },
+            carpetes: {
+                title: 'Limpeza de Carpetes e Tapetes',
+                content: `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-check-circle text-success me-2"></i>O que está incluído:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2 text-success"></i>Aspiração potente</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Tratamento pré-lavagem</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Lavagem com equipamento profissional</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Extração de água e sujeira</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Desodorização</li>
+                                <li><i class="fas fa-check me-2 text-success"></i>Secagem acelerada</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-clock text-primary me-2"></i>Tempo de execução:</h6>
+                            <p>Aproximadamente 3-4 horas</p>
+                            
+                            <h6><i class="fas fa-tag text-warning me-2"></i>Preços:</h6>
+                            <ul class="list-unstyled">
+                                <li>Por m²: R$ 12</li>
+                                <li>Tapete pequeno: R$ 80</li>
+                                <li>Tapete médio: R$ 120</li>
+                                <li>Carpete grande: R$ 200</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning mt-3">
+                        <i class="fas fa-tint me-2"></i>
+                        Equipamento de última geração com secagem rápida. Pode usar no mesmo dia!
+                    </div>
+                `
+            }
+        };
+
+        // Open service modal
+        function openServiceModal(serviceType) {
+            const service = serviceDetails[serviceType];
+            if (service) {
+                document.getElementById('serviceModalTitle').textContent = service.title;
+                document.getElementById('serviceModalBody').innerHTML = service.content;
+                
+                const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+                modal.show();
+            }
+        }
+
+        // WhatsApp integration
+        function openWhatsApp(message = '') {
+            const phone = '5511999999999'; // Replace with actual WhatsApp number
+            const defaultMessage = message || 'Olá! Gostaria de saber mais sobre os serviços de limpeza automotiva.';
+            const encodedMessage = encodeURIComponent(defaultMessage);
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Quote form functions
+        function updateServiceOptions() {
+            const category = document.getElementById('serviceCategory').value;
+            const specificService = document.getElementById('specificService');
+            const vehicleInfo = document.getElementById('vehicleInfo');
+            const residentialInfo = document.getElementById('residentialInfo');
+
+            // Clear specific service options
+            specificService.innerHTML = '<option value="">Selecione o serviço específico</option>';
+
+            // Hide all info sections
+            vehicleInfo.style.display = 'none';
+            residentialInfo.style.display = 'none';
+
+            if (category === 'automotivo') {
+                // Show vehicle info
+                vehicleInfo.style.display = 'block';
+                
+                // Add automotive service options
+                const automotiveServices = [
+                    { value: 'estofados-auto', text: 'Limpeza de Estofados Automotivos' },
+                    { value: 'estetica', text: 'Estética Automotiva' },
+                    { value: 'lavagem-completa', text: 'Lavagem Completa' },
+                    { value: 'enceramento', text: 'Enceramento Premium' },
+                    { value: 'motor', text: 'Limpeza de Motor' },
+                    { value: 'vidros', text: 'Tratamento de Vidros' }
+                ];
+                
+                automotiveServices.forEach(service => {
+                    const option = document.createElement('option');
+                    option.value = service.value;
+                    option.textContent = service.text;
+                    specificService.appendChild(option);
+                });
+
+            } else if (category === 'residencial') {
+                // Show residential info
+                residentialInfo.style.display = 'block';
+                
+                // Add residential service options
+                const residentialServices = [
+                    { value: 'sofas', text: 'Limpeza de Sofás e Poltronas' },
+                    { value: 'cortinas', text: 'Limpeza de Cortinas' },
+                    { value: 'carpetes', text: 'Limpeza de Carpetes e Tapetes' },
+                    { value: 'combo-residencial', text: 'Combo: Sofá + Cortinas + Carpetes' }
+                ];
+                
+                residentialServices.forEach(service => {
+                    const option = document.createElement('option');
+                    option.value = service.value;
+                    option.textContent = service.text;
+                    specificService.appendChild(option);
+                });
+
+            } else if (category === 'ambos') {
+                // Show both info sections
+                vehicleInfo.style.display = 'block';
+                residentialInfo.style.display = 'block';
+                
+                // Add all service options
+                const allServices = [
+                    { value: 'combo-completo', text: 'Combo: Residencial + Automotivo' },
+                    { value: 'estofados-auto', text: 'Limpeza de Estofados Automotivos' },
+                    { value: 'sofas', text: 'Limpeza de Sofás e Poltronas' },
+                    { value: 'estetica', text: 'Estética Automotiva' },
+                    { value: 'cortinas', text: 'Limpeza de Cortinas' },
+                    { value: 'carpetes', text: 'Limpeza de Carpetes' }
+                ];
+                
+                allServices.forEach(service => {
+                    const option = document.createElement('option');
+                    option.value = service.value;
+                    option.textContent = service.text;
+                    specificService.appendChild(option);
+                });
+            }
+        }
+
+        // Form submission to WhatsApp
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('clientName').value,
+                phone: document.getElementById('clientPhone').value,
+                email: document.getElementById('clientEmail').value,
+                address: document.getElementById('clientAddress').value,
+                category: document.getElementById('serviceCategory').value,
+                service: document.getElementById('specificService').value,
+                notes: document.getElementById('serviceNotes').value
+            };
+
+            // Add vehicle info if visible
+            const vehicleInfo = document.getElementById('vehicleInfo');
+            if (vehicleInfo.style.display !== 'none') {
+                formData.vehicleBrand = document.getElementById('vehicleBrand').value;
+                formData.vehicleModel = document.getElementById('vehicleModel').value;
+                formData.vehicleYear = document.getElementById('vehicleYear').value;
+                formData.vehicleType = document.getElementById('vehicleType').value;
+                formData.vehicleCondition = document.getElementById('vehicleCondition').value;
+            }
+
+            // Add residential info if visible
+            const residentialInfo = document.getElementById('residentialInfo');
+            if (residentialInfo.style.display !== 'none') {
+                formData.itemQuantity = document.getElementById('itemQuantity').value;
+                formData.itemSize = document.getElementById('itemSize').value;
+                formData.itemCondition = document.getElementById('itemCondition').value;
+                formData.urgency = document.getElementById('urgency').value;
+            }
+
+            // Generate WhatsApp message
+            let message = `*SOLICITAÇÃO DE ORÇAMENTO* 📋\n\n`;
+            message += `👤 *Nome:* ${formData.name}\n`;
+            message += `📱 *Telefone:* ${formData.phone}\n`;
+            if (formData.email) message += `📧 *E-mail:* ${formData.email}\n`;
+            if (formData.address) message += `📍 *Local:* ${formData.address}\n\n`;
+            
+            message += `🔧 *Serviço:* ${document.getElementById('specificService').selectedOptions[0].text}\n`;
+            
+            // Add vehicle details if available
+            if (formData.vehicleBrand || formData.vehicleModel) {
+                message += `\n🚗 *Informações do Veículo:*\n`;
+                if (formData.vehicleBrand) message += `• Marca: ${formData.vehicleBrand}\n`;
+                if (formData.vehicleModel) message += `• Modelo: ${formData.vehicleModel}\n`;
+                if (formData.vehicleYear) message += `• Ano: ${formData.vehicleYear}\n`;
+                if (formData.vehicleType) message += `• Tipo: ${document.getElementById('vehicleType').selectedOptions[0].text}\n`;
+                if (formData.vehicleCondition) message += `• Estado: ${document.getElementById('vehicleCondition').selectedOptions[0].text}\n`;
+            }
+            
+            // Add residential details if available
+            if (formData.itemQuantity || formData.itemSize) {
+                message += `\n🏠 *Informações dos Estofados:*\n`;
+                if (formData.itemQuantity) message += `• Quantidade: ${formData.itemQuantity} peças\n`;
+                if (formData.itemSize) message += `• Tamanho: ${document.getElementById('itemSize').selectedOptions[0].text}\n`;
+                if (formData.itemCondition) message += `• Estado: ${document.getElementById('itemCondition').selectedOptions[0].text}\n`;
+                if (formData.urgency) message += `• Prazo: ${document.getElementById('urgency').selectedOptions[0].text}\n`;
+            }
+            
+            if (formData.notes) {
+                message += `\n📝 *Observações:*\n${formData.notes}`;
+            }
+
+            // Send via WhatsApp
+            openWhatsApp(message);
+            
+            // Show success message
+            alert('Redirecionando para WhatsApp com suas informações preenchidas!');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(26, 35, 126, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'var(--gradient)';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .gallery-item, .contact-info, .contact-form').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Loading animation
+        window.addEventListener('load', function() {
+            document.body.style.overflow = 'visible';
+            
+            // Add entrance animations
+            const heroElements = document.querySelectorAll('.hero h1, .hero p, .btn-custom');
+            heroElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Gallery item effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Form validation and UX improvements
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--secondary-color)';
+                this.style.boxShadow = '0 0 0 0.2rem rgba(63, 81, 181, 0.25)';
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value.trim() && this.hasAttribute('required')) {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#eee';
+                    this.style.boxShadow = 'none';
+                }
+            });
+        });
+
+        // Mobile menu close on link click
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                }
+            });
+        });
+
+        // Preloader (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any initialization code here
+            console.log('AutoLimpeza Pro website loaded successfully!');
+        });
+    </script>
+</body>
+</html>
